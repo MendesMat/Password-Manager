@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import pyperclip
 
 
 class PasswordManagerApp:
@@ -51,6 +52,7 @@ class PasswordManagerApp:
         generated_password = self.password_generator.generate_password()
         self.password_input.delete(0, END)
         self.password_input.insert(0, generated_password)
+        pyperclip.copy(generated_password)
 
     # Save the credentials inputted from the user
     def save_credentials(self):
